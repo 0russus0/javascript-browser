@@ -1,0 +1,40 @@
+body{
+    background-color: #f0c911;
+}
+.container{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    background-color: white;
+    margin: 100px auto;
+    padding: 20px;
+}
+.laClasse{
+    color: black;
+}
+.laClasseAdallas{
+    color: blueviolet;
+}
+
+.my-button{
+    display: flex;
+    font-size:15px;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#c92200;
+    border-color:#e65f44;
+    font-weight:bold;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    box-shadow:inset 0px 1px 0px 0px #f9eca0;
+    text-shadow:inset 0px 1px 0px #ded17c;
+    background:linear-gradient(#f0c911, #f2ab1e);
+}
+
+button:hover {
+    background: linear-gradient(#f2ab1e, #f0c911);
+}
