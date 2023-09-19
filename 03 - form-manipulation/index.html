@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Manipulation</title>
-</head>
-<body>
-    <!-- Your code goes here -->
-    <script src="js/exercices.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form-manipulation</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body style="font-family: sans-serif">
+        <!-- Your code goes here -->
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Manipulation des formulaires ☠</h1>
+                    </div>
+                    <form action="" method="POST">
+                        <span>
+                            <label for="name">Nom&nbsp;:</label>
+                            <input type="text" id="name" name="user_name"
+                        /></span>
+                        <span
+                            ><label for="firstName">Prenom&nbsp;:</label>
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="user_firstName"
+                        /></span>
+                        <span>To be or not to be ?</span>
+                        <span>
+                            <label for="subscribeNews">To be</label>
+                            <input
+                                type="checkbox"
+                                id="toBe"
+                                name="toBe"
+                                value="toBe"
+                            />
+                        </span>
+                        <span>
+                            <label for="subscribeNews">Not to be</label>
+                            <input
+                                type="checkbox"
+                                id="notToBe"
+                                name="notToBe"
+                                value="notToBe"
+                            />
+                        </span>
+                        <input type="submit" value="Soumettre" />
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/exercices.js"></script>
+    </body>
 </html>

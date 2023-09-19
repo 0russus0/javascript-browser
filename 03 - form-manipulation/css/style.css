@@ -1,0 +1,98 @@
+body {
+    background-color: #f0c911;
+}
+.row p {
+    margin: 10px auto;
+}
+form {
+    margin: 10px auto;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+.my-button {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: #c92200;
+    border-color: #e65f44;
+    font-weight: bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: inset 0px 1px 0px 0px #f9eca0;
+    text-shadow: inset 0px 1px 0px #ded17c;
+    background: linear-gradient(#f0c911, #f2ab1e);
+    text-align: center;
+}
+
+button:hover {
+    background: linear-gradient(#f2ab1e, #f0c911);
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tab ul {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.tab li {
+    margin: 10px;
+    list-style: none;
+}
+
+input {
+    border-radius: 10px;
+    border: solid 0.5px;
+    border-color: lightgrey;
+    padding: 5px;
+}
+
+.tab button {
+    background: #d93452;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.tab button:hover {
+    background: #f2ab1e;
+    text-decoration: none;
+}
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:valid {
+    border: 1px solid green;
+}
+
+.toLong {
+    background-color: #c92200;
+}
