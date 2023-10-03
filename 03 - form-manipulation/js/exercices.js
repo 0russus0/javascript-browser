@@ -6,7 +6,6 @@ let rts = str.split('').reverse().join('');
 console.log(str + rts);
 
 const form = document.querySelector('form');
-let regex = new RegExp(`[a-zA-ZÀ-ÿ- ']`);
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
 
@@ -14,6 +13,10 @@ form.addEventListener('submit', (event) => {
 	const valeurName = baliseName.value;
 	const baliseFirstName = document.getElementById('firstName');
 	const valeurFirstName = baliseFirstName.value;
+	const all = document.getElementById('all').checked;
+	const spam = document.getElementById('spam').checked;
+
+	const frenchNameRegex = /^[a-zA-ZÀ-ÿ-]+$/;
 
 	if (valeurName === '' && valeurFirstName === '') {
 		alert('Veuillez indiquer vos nom et prénom');
@@ -23,18 +26,21 @@ form.addEventListener('submit', (event) => {
 			alert('Veuillez indiquer votre nom');
 			return false;
 		} else {
-			console.log(valeurName);
-			var OK = regex.exec(valeurName);
-			if (!OK) window.alert(valeurName + " n'est pas un nom valide!");
-			else window.alert('Merci, votre nom est : ' + OK[0]);
+			if (!valeurName.match(frenchNameRegex))
+				window.alert(valeurName + " n'est pas un nom valide!");
+			else window.alert('Merci, votre nom est : ' + valeurName);
 		}
 		if (valeurFirstName === '' && valeurName) {
 			alert('Veuillez indiquer votre prénom');
 		} else {
-			var OK = regex.exec(valeurFirstName);
-			if (!OK)
-				window.alert(valeurFirstName + " n'est pas un prénom valide!");
-			else window.alert('Merci, votre prénom est : ' + OK[0]);
+			if (!valeurFirstName.match(frenchNameRegex))
+				window.alert(valeurFirstName + " n'est pas un nom valide!");
+			else window.alert('Merci, votre nom est : ' + valeurFirstName);
 		}
+		if (!all && !spam) {
+			alert('Vous devez TOUT accepter.');
+			return false;
+		} else
+			window.alert('Bravo ' + valeurFirstName + ' ' + valeurName + ' !');
 	}
 });
