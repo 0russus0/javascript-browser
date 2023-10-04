@@ -1,9 +1,6 @@
 // Your code goes here
 // Exercice 1 : Validation de Formulaire
-
-let str = 'youpi';
-let rts = str.split('').reverse().join('');
-console.log(str + rts);
+// #### Exercice 2 : Récupération de Données de Formulaire
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
@@ -13,10 +10,13 @@ form.addEventListener('submit', (event) => {
 	const valeurName = baliseName.value;
 	const baliseFirstName = document.getElementById('firstName');
 	const valeurFirstName = baliseFirstName.value;
-	const all = document.getElementById('all').checked;
-	const spam = document.getElementById('spam').checked;
-
 	const frenchNameRegex = /^[a-zA-ZÀ-ÿ-]+$/;
+	const all = document.querySelector('input[name="all"]:checked');
+	const spam = document.querySelector('input[name="spam"]:checked');
+	const contract = all.value;
+	const letter = spam.value;
+	const answer = [];
+	const checkboxes = document.getElementsByName('answer');
 
 	if (valeurName === '' && valeurFirstName === '') {
 		alert('Veuillez indiquer vos nom et prénom');
@@ -32,6 +32,7 @@ form.addEventListener('submit', (event) => {
 		}
 		if (valeurFirstName === '' && valeurName) {
 			alert('Veuillez indiquer votre prénom');
+			return false;
 		} else {
 			if (!valeurFirstName.match(frenchNameRegex))
 				window.alert(valeurFirstName + " n'est pas un nom valide!");
@@ -42,5 +43,31 @@ form.addEventListener('submit', (event) => {
 			return false;
 		} else
 			window.alert('Bravo ' + valeurFirstName + ' ' + valeurName + ' !');
+
+		// Afficher les données dans la page HTML
+		for (var i = 0; i < checkboxes.length; i++) {
+			if (checkboxes[i].checked) {
+				console.log(checkboxes[i]);
+				answer.push(checkboxes[i].value);
+			}
+		}
+		const datasDiv = document.getElementById('datas');
+		datasDiv.innerHTML =
+			'<h3>Résultats du formulaire :</h3>' +
+			'<p>Nom : ' +
+			valeurName +
+			'</p>' +
+			'<p>Prénom : ' +
+			valeurFirstName +
+			'</p>' +
+			'<p>Votre âme est : ' +
+			contract +
+			'</p>' +
+			'<p>Vous allez être : ' +
+			letter +
+			'</p>' +
+			'<p>' +
+			answer.join(', ') +
+			'</p>';
 	}
 });

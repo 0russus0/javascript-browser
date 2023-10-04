@@ -46,7 +46,11 @@
 						</div>
 
 						<div class="row">
-							<span>To be or not to be ?</span>
+							<span
+								><h3>
+									Acceptation de la vente de votre âme
+								</h3></span
+							>
 							<span>
 								<label for="subscribeContract"
 									>Vous acceptez Tout</label
@@ -55,7 +59,7 @@
 									type="checkbox"
 									id="all"
 									name="all"
-									value="all"
+									value="Vendue"
 								/>
 							</span>
 							<span>
@@ -66,10 +70,33 @@
 									type="checkbox"
 									id="spam"
 									name="spam"
-									value="spam"
+									value="Spamé"
 								/>
 							</span>
 						</div>
+						<fieldset>
+							<legend>To be or not to be ?</legend>
+
+							<div>
+								<input
+									type="radio"
+									id="toBe"
+									name="answer"
+									value="Vous êtes un coquinou"
+								/>
+								<label for="toBe">to be</label>
+							</div>
+
+							<div>
+								<input
+									type="radio"
+									id="notToBe"
+									name="answer"
+									value="Vous n'êtes pas un coquinou"
+								/>
+								<label for="notToBe">not to be</label>
+							</div>
+						</fieldset>
 						<span>
 							<input
 								class="btn btn-success"
@@ -78,6 +105,7 @@
 							/>
 						</span>
 					</form>
+					<div id="datas" class="shadow"></div>
 				</div>
 			</div>
 		</section>
