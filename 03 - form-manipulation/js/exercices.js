@@ -79,3 +79,63 @@ var champTexte = document.getElementById('champTexte');
 select.addEventListener('change', function () {
 	champTexte.value = select.value;
 });
+
+let suggestions = [
+	'Apple',
+	'Avion',
+	'Banana',
+	'Berlingo',
+	'Cherry',
+	'Coquinou',
+	'Date',
+	'Grape',
+	'Lemon',
+	'Mango',
+	'Orange',
+	'Peach',
+	'Pear',
+	'Pineapple',
+	'Strawberry',
+	'Watermelon',
+	'Zorro',
+];
+
+let inputField = document.getElementById('autocomplete');
+let suggestionsDiv = document.getElementById('suggestions');
+
+// Écouter les événements "input" sur le champ de texte
+inputField.addEventListener('input', function () {
+	var inputValue = inputField.value.toLowerCase();
+	var matchingSuggestions = [];
+
+	// Filtrer les suggestions en fonction de ce qui est entré
+	matchingSuggestions = suggestions.filter(function (suggestion) {
+		return suggestion.toLowerCase().startsWith(inputValue);
+	});
+
+	// Afficher les suggestions dans la div dédiée
+	suggestionsDiv.innerHTML = '';
+	if (matchingSuggestions.length > 0) {
+		matchingSuggestions.forEach(function (suggestion) {
+			var suggestionItem = document.createElement('div');
+			suggestionItem.textContent = suggestion;
+
+			// Écouter les clics sur les suggestions
+			suggestionItem.addEventListener('click', function () {
+				inputField.value = suggestion;
+				suggestionsDiv.style.display = 'none';
+			});
+			suggestionsDiv.appendChild(suggestionItem);
+		});
+		suggestionsDiv.style.display = 'block';
+	} else {
+		suggestionsDiv.style.display = 'none';
+	}
+});
+
+// Cacher les suggestions lorsque l'utilisateur clique en dehors du champ de texte
+document.addEventListener('click', function (event) {
+	if (event.target !== inputField) {
+		suggestionsDiv.style.display = 'none';
+	}
+});

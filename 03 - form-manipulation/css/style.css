@@ -125,3 +125,7 @@ form span {
 	border-radius: 5px;
 	padding: 10px;
 }
+
+#suggestions {
+	color: rgb(77, 77, 74);
+}
