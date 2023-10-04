@@ -51,6 +51,7 @@ form.addEventListener('submit', (event) => {
 				answer.push(checkboxes[i].value);
 			}
 		}
+
 		const datasDiv = document.getElementById('datas');
 		datasDiv.innerHTML =
 			'<h3>Résultats du formulaire :</h3>' +
@@ -70,4 +71,11 @@ form.addEventListener('submit', (event) => {
 			answer.join(', ') +
 			'</p>';
 	}
+});
+
+let select = document.getElementById('choix');
+var champTexte = document.getElementById('champTexte');
+
+select.addEventListener('change', function () {
+	champTexte.value = select.value;
 });

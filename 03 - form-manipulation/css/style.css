@@ -20,6 +20,9 @@ h1 {
 	padding: 20px;
 	border-radius: 4px;
 }
+.row {
+	width: 100%;
+}
 
 .my-button {
 	margin: 10px auto;
@@ -111,7 +114,7 @@ form span {
 }
 
 #datas {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	max-width: 50%;
 	margin: 20px auto;
