@@ -139,3 +139,39 @@ document.addEventListener('click', function (event) {
 		suggestionsDiv.style.display = 'none';
 	}
 });
+
+let formulaire = document.getElementById('myForm');
+var champsDynamiques = document.getElementById('dynamicsFields');
+var ajouterChamp = document.getElementById('addField');
+var supprimerChamp = document.getElementById('deleteField');
+
+var champCount = 0;
+
+// Fonction pour ajouter un champ de texte
+function ajouterChampTexte() {
+	champCount++;
+	var champTexte = document.createElement('input');
+	champTexte.type = 'text';
+	champTexte.name = 'champ' + champCount;
+	champTexte.placeholder = 'Champ ' + champCount;
+	champsDynamiques.appendChild(champTexte);
+}
+
+// Fonction pour supprimer le dernier champ de texte
+function supprimerChampTexte() {
+	if (champCount > 0) {
+		var dernierChamp = champsDynamiques.lastChild;
+		champsDynamiques.removeChild(dernierChamp);
+		champCount--;
+	}
+}
+
+// Écouter les clics sur les boutons "Ajouter" et "Supprimer"
+ajouterChamp.addEventListener('click', ajouterChampTexte);
+supprimerChamp.addEventListener('click', supprimerChampTexte);
+
+// Empêcher le formulaire de se soumettre normalement
+formulaire.addEventListener('submit', function (event) {
+	event.preventDefault();
+	// Vous pouvez ajouter ici la logique pour traiter les données du formulaire
+});
