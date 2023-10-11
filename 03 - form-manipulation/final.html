@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form-manipulation-Final</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body style="font-family: sans-serif">
+		<!-- Your code goes here -->
+
+		<section>
+			<div class="container">
+				<h1>Boss de fin</h1>
+				<div id="form-container" class="row">
+					<form id="form" onsubmit="return false">
+						<div class="form-step" data-step="1">
+							<h2>Étape 1</h2>
+							<input type="text" placeholder="Champ 1" />
+							<button
+								onclick="nextStep(1)"
+								class="btn btn-primary"
+							>
+								Étape Suivante
+							</button>
+						</div>
+						<div class="form-step" data-step="2">
+							<h2>Étape 2</h2>
+							<input type="text" placeholder="Champ 2" />
+							<button
+								onclick="prevStep(2)"
+								class="btn btn-secondary"
+							>
+								Étape Précédente
+							</button>
+							<button
+								onclick="nextStep(2)"
+								class="btn btn-primary"
+							>
+								Étape Suivante
+							</button>
+						</div>
+						<div class="form-step" data-step="3">
+							<h2>Étape 3</h2>
+							<input type="text" placeholder="Champ 3" />
+							<button
+								onclick="prevStep(3)"
+								class="btn btn-secondary"
+							>
+								Étape Précédente
+							</button>
+							<button
+								onclick="submitForm()"
+								class="btn btn-primary"
+							>
+								Soumettre
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+			crossorigin="anonymous"
+		></script>
+		<script src="js/final.js"></script>
+	</body>
+</html>
